@@ -10,7 +10,7 @@ class QuestionController extends Controller
 {
     public function index()
     {
-        $questions = Question::all();
+        $questions = Question::with(['options', 'correctMatches'])->get();
 
         $response_data = [
             'data' => $questions,

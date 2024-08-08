@@ -43,7 +43,7 @@ class QuestionController extends Controller
             Option::create(['question_id' => $question->id, 'text' => $text, 'type' => $type]);
         }
 
-       return redirect()->route('correct-match.index', 15);
+        return redirect()->route('correct-match.index', $question->id);
     }
 
     /**
